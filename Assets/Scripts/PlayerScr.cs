@@ -69,6 +69,7 @@ public class PlayerScr : MonoBehaviour
 
     public void CambiarSprite()
     {
+        GameObject.Find("Bloque1").GetComponent<Animator>().enabled = false;
         Musica.Stop();
         GetComponent<SpriteRenderer>().sprite = PlayerDead;
     }

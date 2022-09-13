@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class CameraScr : MonoBehaviour
 {
-    public GameObject Jugador;
-
     public Text myText;
     public Text textFPS;
     public Text textTiempo;
@@ -17,11 +15,13 @@ public class CameraScr : MonoBehaviour
     int contadorJuego = 0;
     int contadorVueltas = 0;
 
+    long puntaje = 0;
 
     void Start()
     {
         contadorJuego = 0;
         tiempoJuego = 0;
+        puntaje = 0;
     }
 
     private void Update()
@@ -45,11 +45,11 @@ public class CameraScr : MonoBehaviour
 
 
     void FixedUpdate()
-    {/*
-        if (Jugador.GetComponent<PlayerScr>().enabled)
+    {
+        if (GameObject.Find("jugadorSprite").GetComponent<SpriteRenderer>().sprite.name != "JuegoPlataforma2DOjo - copia")
         {
-            transform.position = new Vector3(Jugador.transform.position.x + 8f, this.transform.position.y, this.transform.position.z);
-            myText.text = "Record: " + PlayerPrefs.GetFloat("Puntaje") + "\nPuntaje actual: " + Mathf.Floor(Jugador.transform.position.x + 10f) + "\nVelocidad de juego: " + PlayerScr.PlayerSpeed;
+            puntaje++;
+            myText.text = "Record: " + PlayerPrefs.GetFloat("Puntaje") + "\nPuntaje actual: " + puntaje;
             contadorJuego++;
             if (contadorJuego == 50)
             {
@@ -57,10 +57,10 @@ public class CameraScr : MonoBehaviour
                 contadorJuego = 0;
             }
             textTiempo.text = "Tiempo de juego: " + tiempoJuego + "s";
-            if (Mathf.Floor(Jugador.transform.position.x + 10f) > PlayerPrefs.GetFloat("Puntaje"))
+            if (puntaje > PlayerPrefs.GetFloat("Puntaje"))
             {
-                PlayerPrefs.SetFloat("Puntaje", Mathf.Floor(Jugador.transform.position.x + 10f));
+                PlayerPrefs.SetFloat("Puntaje", puntaje);
             }
-        }*/
+        }
     }
 }
