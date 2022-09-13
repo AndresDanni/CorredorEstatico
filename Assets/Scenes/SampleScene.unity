@@ -387,7 +387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599f42f328782fa4780adf7d07ab2d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jugador: {fileID: 993211524}
   myText: {fileID: 40915422}
   textFPS: {fileID: 783165428}
   textTiempo: {fileID: 385727212}

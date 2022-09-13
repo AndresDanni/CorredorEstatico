@@ -9,7 +9,7 @@ public class Generador : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("InstanciarCajas", 2.0f, 3.0f);
+        InvokeRepeating("InstanciarCajas", 2.0f, 5.0f);
     }
 
     private void FixedUpdate()
@@ -20,7 +20,15 @@ public class Generador : MonoBehaviour
 
     private void InstanciarCajas()
     {
-        Instantiate(cajas, new Vector3(13.0f, -2.295f, 0.0f), cajas.transform.rotation);
+        if (Random.Range(0, 2) == 0)
+        {
+            Instantiate(cajas, new Vector3(13.0f, -2.295f, 0.0f), cajas.transform.rotation);
+        }
+        else
+        {
+            Instantiate(cajas, new Vector3(13.0f, -2.295f, 0.0f), cajas.transform.rotation);
+            Instantiate(cajas, new Vector3(13.0f, -0.5f, 0.0f), cajas.transform.rotation);
+        }
         if (Random.Range(0, 2) == 1)
         {
             Instantiate(flies, new Vector3(13.0f, Random.Range(-2.525f, 2.55f), 0.0f), flies.transform.rotation);

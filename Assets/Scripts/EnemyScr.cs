@@ -13,7 +13,7 @@ public class EnemyScr : MonoBehaviour
         if (this.transform.position.x < -21.0f)
             Destroy(gameObject);
 
-        this.transform.Translate(Vector3.left * 0.1f);
+        this.transform.Translate(Vector3.left * 0.08f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
