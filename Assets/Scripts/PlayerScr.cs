@@ -41,6 +41,8 @@ public class PlayerScr : MonoBehaviour
             dobleSalto = false;
             myBody.AddForce(Vector2.up * 6f, ForceMode2D.Impulse);
         }
+        
+        this.GetComponent<Animator>().SetBool("enSuelo", Mathf.Abs(myBody.velocity.y) < 0.001f);
 
         if (Input.GetKey("s") && Mathf.Abs(myBody.velocity.y) > 0.001f)
         {
