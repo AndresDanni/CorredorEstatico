@@ -9,6 +9,7 @@ public class PlayerScr : MonoBehaviour
     float tiempoDisparo = 0f;
 
     bool dobleSalto = false;
+    public bool gameOver = false;
 
     private AudioSource Musica;
 
@@ -24,11 +25,17 @@ public class PlayerScr : MonoBehaviour
         myBody = GetComponent<Rigidbody2D>();
         Musica = GetComponent<AudioSource>();
         Musica.Play();
+        gameOver = false;
     }
 
 
     void FixedUpdate()
     {
+        if (Input.GetKey("r") && gameOver)
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+
+        if (gameOver)
+            return;
 
         if (Input.GetKey("w") && Mathf.Abs(myBody.velocity.y) < 0.001f)
         {
@@ -68,11 +75,22 @@ public class PlayerScr : MonoBehaviour
             tiempoDisparo = Time.time;
         }
     }
-
+    /*
     public void CambiarSprite()
     {
-        //GameObject.Find("Bloque1").GetComponent<Animator>().enabled = false;
+        GameObject.Find("Bloque1").GetComponent<Animator>().enabled = false;
         Musica.Stop();
         GetComponent<SpriteRenderer>().sprite = PlayerDead;
+    }*/
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Fly"))
+        {
+            gameOver = true;
+            Musica.Stop();
+            GetComponent<SpriteRenderer>().sprite = PlayerDead;
+            this.GetComponent<Animator>().SetBool("enSuelo", true);
+        }
     }
 }

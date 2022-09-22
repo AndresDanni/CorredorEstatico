@@ -686,7 +686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993211524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.33, y: 0.55, z: -0.112401046}
+  m_LocalPosition: {x: -5.33, y: 0.5, z: -0.112401046}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -804,6 +804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b77824686d2f8841b61d3767e394d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: 0
   PlayerNormal: {fileID: 21300000, guid: c3ccc5a926fd54f49bea6ad87c9aaa3d, type: 3}
   PlayerGetDown: {fileID: 21300000, guid: 72fffbd2ce060d14988677f83ec2c700, type: 3}
   PlayerDead: {fileID: 21300000, guid: 7b1c3f8f0e199774593558ffc9be3b99, type: 3}
@@ -1168,6 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078b391de7537aa4daee3e7b3dffdd3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floorSpeed: 4
 --- !u!1 &1612655330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,6 +1287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078b391de7537aa4daee3e7b3dffdd3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floorSpeed: 1
 --- !u!1001 &2130645605
 PrefabInstance:
   m_ObjectHideFlags: 0
