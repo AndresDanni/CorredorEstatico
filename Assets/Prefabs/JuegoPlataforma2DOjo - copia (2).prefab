@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8722995389246277736}
   - component: {fileID: 8722995389246277750}
   - component: {fileID: 8722995389246277751}
-  - component: {fileID: -1811796020319822915}
   m_Layer: 0
   m_Name: JuegoPlataforma2DOjo - copia (2)
   m_TagString: Fly
@@ -125,15 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debd93d8f264fe0419190d35a871d14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1811796020319822915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722995389246277739}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d950ce3689def4cb3392c866d90bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  flySpeed: 3

@@ -75,13 +75,6 @@ public class PlayerScr : MonoBehaviour
             tiempoDisparo = Time.time;
         }
     }
-    /*
-    public void CambiarSprite()
-    {
-        GameObject.Find("Bloque1").GetComponent<Animator>().enabled = false;
-        Musica.Stop();
-        GetComponent<SpriteRenderer>().sprite = PlayerDead;
-    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

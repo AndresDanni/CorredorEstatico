@@ -8,6 +8,7 @@ public class CameraScr : MonoBehaviour
     public Text myText;
     public Text textFPS;
     public Text textTiempo;
+    public Text textGameOver;
 
     float tiempoDelta = 0f;
     
@@ -41,12 +42,15 @@ public class CameraScr : MonoBehaviour
         {
             Application.Quit();
         }
+
+        if (GameObject.Find("jugadorSprite").GetComponent<PlayerScr>().gameOver)
+            textGameOver.gameObject.SetActive(true);
     }
 
 
     void FixedUpdate()
     {
-        if (GameObject.Find("jugadorSprite").GetComponent<SpriteRenderer>().sprite.name != "JuegoPlataforma2DOjo - copia")
+        if (GameObject.Find("jugadorSprite").GetComponent<PlayerScr>().gameOver == false)
         {
             puntaje++;
             myText.text = "Record: " + PlayerPrefs.GetFloat("Puntaje") + "\nPuntaje actual: " + puntaje;

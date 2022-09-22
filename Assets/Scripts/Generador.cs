@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class Generador : MonoBehaviour
 {
+    private IEnumerator coEnemySpawn;
+
     public GameObject cajas;
     public GameObject flies;
 
     void Start()
     {
-        InvokeRepeating("InstanciarCajas", 2.0f, 5.0f);
+        //InvokeRepeating("InstanciarCajas", 2.0f, 5.0f);
+        coEnemySpawn = EnemySpawn(Random.Range(2.0f, 3.0f));
+        StartCoroutine(coEnemySpawn);
     }
 
     private void FixedUpdate()
     {
-        if (GameObject.Find("jugadorSprite").GetComponent<SpriteRenderer>().sprite.name == "JuegoPlataforma2DOjo - copia")
-            CancelInvoke("InstanciarCajas");
+        if (GameObject.Find("jugadorSprite").GetComponent<PlayerScr>().gameOver)
+            StopAllCoroutines();
+            //CancelInvoke("InstanciarCajas");
     }
 
+    /*
     private void InstanciarCajas()
     {
         if (Random.Range(0, 2) == 0)
@@ -33,6 +39,13 @@ public class Generador : MonoBehaviour
         {
             Instantiate(flies, new Vector3(13.0f, Random.Range(-2.525f, 2.55f), 0.0f), flies.transform.rotation);
         }
-    }
+    }*/
 
+    IEnumerator EnemySpawn(float timeInterval)
+    {
+        yield return new WaitForSeconds(timeInterval);
+        Instantiate(cajas, new Vector3(Random.Range(13.0f, 18.0f), -2.296f, 0.0f), cajas.transform.rotation);
+        Instantiate(flies, new Vector3(Random.Range(13.0f, 18.0f), Random.Range(-2.525f, 2.55f), 0.0f), flies.transform.rotation);
+        StartCoroutine(EnemySpawn(Random.Range(2.0f, 5.0f)));
+    }
 }
