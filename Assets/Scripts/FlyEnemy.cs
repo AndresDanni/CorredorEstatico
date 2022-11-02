@@ -8,6 +8,11 @@ public class FlyEnemy : MonoBehaviour
 
     void Update()
     {
+        if (GameObject.Find("jugadorSprite").GetComponent<PlayerScr>().gameOver == true)
+        {
+            GetComponent<Animator>().enabled = false;
+        }
+
         if (GameObject.Find("jugadorSprite").GetComponent<PlayerScr>().gameOver == false)
         {
             if (this.transform.position.x < -13.0f)

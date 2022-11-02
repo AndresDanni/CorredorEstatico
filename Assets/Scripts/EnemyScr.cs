@@ -8,6 +8,11 @@ public class EnemyScr : MonoBehaviour
 
     private void Update()
     {
+        if (GameObject.Find("jugadorSprite").GetComponent<PlayerScr>().gameOver == true)
+        {
+            GetComponent<Animator>().enabled = false;
+        }
+
         if (GameObject.Find("jugadorSprite").GetComponent<PlayerScr>().gameOver == false)
         {
             if (this.transform.position.x < -21.0f)

@@ -44,8 +44,21 @@ public class Generador : MonoBehaviour
     IEnumerator EnemySpawn(float timeInterval)
     {
         yield return new WaitForSeconds(timeInterval);
-        Instantiate(cajas, new Vector3(Random.Range(13.0f, 18.0f), -2.296f, 0.0f), cajas.transform.rotation);
-        Instantiate(flies, new Vector3(Random.Range(13.0f, 18.0f), Random.Range(-2.525f, 2.55f), 0.0f), flies.transform.rotation);
-        StartCoroutine(EnemySpawn(Random.Range(2.0f, 5.0f)));
+        int action = Random.Range(0, 3);
+        switch (action)
+        {
+            case 0:
+                Instantiate(cajas, new Vector3(Random.Range(13.0f, 18.0f), -2.296f, 0.0f), cajas.transform.rotation);
+                Debug.Log("Action: caja");
+                break;
+            case 1:
+                Instantiate(flies, new Vector3(Random.Range(13.0f, 18.0f), Random.Range(-2.525f, 2.55f), 0.0f), flies.transform.rotation);
+                Debug.Log("Action: fly");
+                break;
+            default:
+                Debug.Log("Action: nothing");
+                break;
+        }
+        StartCoroutine(EnemySpawn(Random.Range(2.0f, 3.5f)));
     }
 }
