@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Generador : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Generador : MonoBehaviour
 
     public GameObject cajas;
     public GameObject flies;
+
+    public Text accion;
 
     void Start()
     {
@@ -48,14 +51,17 @@ public class Generador : MonoBehaviour
         switch (action)
         {
             case 0:
+                accion.text = "Siguiente evento: caja sospechosa";
                 Instantiate(cajas, new Vector3(Random.Range(13.0f, 18.0f), -2.296f, 0.0f), cajas.transform.rotation);
                 Debug.Log("Action: caja");
                 break;
             case 1:
+                accion.text = "Siguiente evento: ojo malvado";
                 Instantiate(flies, new Vector3(Random.Range(13.0f, 18.0f), Random.Range(-2.525f, 2.55f), 0.0f), flies.transform.rotation);
                 Debug.Log("Action: fly");
                 break;
             default:
+                accion.text = "Siguiente evento: libre de amenazas";
                 Debug.Log("Action: nothing");
                 break;
         }
