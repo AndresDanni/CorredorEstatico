@@ -1191,10 +1191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'GAME OVER.
-
-
-    Presione R para volver a jugar.'
+  m_Text: "GAME OVER\n< R para volver a jugar >\n< M para volver al men\xFA >"
 --- !u!222 &2033003903
 CanvasRenderer:
   m_ObjectHideFlags: 0

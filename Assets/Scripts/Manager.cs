@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
+    public AudioClip startSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Manager : MonoBehaviour
 
     public void Nivel()
     {
+        GetComponent<AudioSource>().PlayOneShot(startSound);
         SceneManager.LoadScene(1);
     }
 }

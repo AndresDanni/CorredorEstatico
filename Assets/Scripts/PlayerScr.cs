@@ -33,6 +33,8 @@ public class PlayerScr : MonoBehaviour
     {
         if (Input.GetKey("r") && gameOver)
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        if (Input.GetKey("m") && gameOver)
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 
         if (gameOver)
             return;

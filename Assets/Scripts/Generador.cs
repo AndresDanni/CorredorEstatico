@@ -52,7 +52,7 @@ public class Generador : MonoBehaviour
         {
             case 0:
                 accion.text = "Siguiente evento: caja sospechosa";
-                Instantiate(cajas, new Vector3(Random.Range(13.0f, 18.0f), -2.296f, 0.0f), cajas.transform.rotation);
+                Instantiate(cajas, new Vector3(Random.Range(13.0f, 18.0f), -3.192f, 0.0f), cajas.transform.rotation);
                 Debug.Log("Action: caja");
                 break;
             case 1:
