@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class EnemyScr : MonoBehaviour
 {
-    public float boxSpeed = 1.0f;
+    public float boxSpeed = 3.0f;
+
+    void Start()
+    {
+        //boxSpeed = 3.0f;
+    }
 
     private void Update()
     {
@@ -17,7 +22,8 @@ public class EnemyScr : MonoBehaviour
         {
             if (this.transform.position.x < -21.0f)
                 Destroy(gameObject);
-            this.transform.position += Vector3.left * boxSpeed * Time.deltaTime;
+            //this.transform.position += Vector3.left * boxSpeed * Time.deltaTime;
+            this.transform.position += Vector3.left * GameObject.Find("Generador").GetComponent<Generador>().gameSpeed * Time.deltaTime;
         }
     }
 }

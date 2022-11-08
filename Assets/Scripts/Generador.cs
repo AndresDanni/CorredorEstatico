@@ -11,12 +11,17 @@ public class Generador : MonoBehaviour
     public GameObject flies;
 
     public Text accion;
+    public Text txtVel;
+
+    public float gameSpeed;
 
     void Start()
     {
         //InvokeRepeating("InstanciarCajas", 2.0f, 5.0f);
         coEnemySpawn = EnemySpawn(Random.Range(2.0f, 3.0f));
         StartCoroutine(coEnemySpawn);
+        StartCoroutine(inscreaseSpeed());
+        gameSpeed = 3.0f;
     }
 
     private void FixedUpdate()
@@ -43,6 +48,17 @@ public class Generador : MonoBehaviour
             Instantiate(flies, new Vector3(13.0f, Random.Range(-2.525f, 2.55f), 0.0f), flies.transform.rotation);
         }
     }*/
+
+    IEnumerator inscreaseSpeed()
+    {
+        while (gameSpeed < 9)
+        {
+            yield return new WaitForSeconds(5.0f);
+            Debug.Log("Speed++");
+            gameSpeed++;
+            txtVel.text = "Velocidad de juego: " + gameSpeed;
+        }
+    }
 
     IEnumerator EnemySpawn(float timeInterval)
     {
