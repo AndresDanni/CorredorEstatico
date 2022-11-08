@@ -613,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -85.91, y: -15}
+  m_AnchoredPosition: {x: -95, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960693076
@@ -1516,6 +1516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6308770181183579449, guid: 8d0c5159dec319149ac76fb5308a40aa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 40a4872e1a7ef5b4bb4b2e073375aa9c, type: 3}
     - target: {fileID: 6308770181183579450, guid: 8d0c5159dec319149ac76fb5308a40aa, type: 3}
       propertyPath: m_Name
       value: Piso
